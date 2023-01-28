@@ -37,13 +37,13 @@ EOC = \033[1;0m
 
 all:	$(NAME)
 		
-$(NAME):	
+$(NAME):	$(SRCS)	
 		@echo "$(YEL)==== Compiling push_swap ====$(EOC)"
 		@$(CC) -c $(SRCS) $(CFLAGS)
 		@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 		@echo "$(GRN)==== push_swap Compiled ====$(EOC)"
 
-bonus:
+bonus:		$(S_BONUS)
 	@echo "$(YEL)==== Building get_next_line ====$(EOC)"
 	@make -C $(GNL_DIR) --silent
 	@echo "$(GRN)        ==== Done ====         $(EOC)"
